@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install cBLAS & LAPACKE
+      - name: Install CBLAS & LAPACKE
         run : |
           sudo apt update
           sudo apt install libopenblas-base
@@ -15,7 +15,7 @@ jobs:
           sudo apt install liblapacke-dev
       - name: compile main.c
         run: |
-          cc -o main main.c -lblas -llapacke
+          cc -o main main.c -lopenblas -llapacke
       - name: Run main
         run: ./main 3
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
