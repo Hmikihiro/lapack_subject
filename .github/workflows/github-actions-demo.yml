@@ -10,7 +10,7 @@ jobs:
           sudo apt update
           sudo apt install libopenblas-base
           sudo apt install libopenblas-dev
-          sudo apt install liblapacke-base
+          sudo apt install liblapacke
       - name: compile main.c
         run: cc -o main main.c -lblas -llapacke
       - name: Run main
