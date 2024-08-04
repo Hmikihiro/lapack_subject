@@ -12,7 +12,9 @@ jobs:
           sudo apt install libopenblas-dev
           sudo apt install liblapacke
       - name: compile main.c
-        run: cc -o main main.c -lblas -llapacke
+        run: |
+          ls
+          cc -o main main.c -lblas -llapacke
       - name: Run main
         run: ./main 3
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
