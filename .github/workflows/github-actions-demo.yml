@@ -12,9 +12,9 @@ jobs:
           sudo apt install libopenblas-base
           sudo apt install libopenblas-dev
           sudo apt install liblapacke
+          sudo apt install liblapacke-dev
       - name: compile main.c
         run: |
-          ls
           cc -o main main.c -lblas -llapacke
       - name: Run main
         run: ./main 3
